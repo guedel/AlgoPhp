@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="AlgoPhp" default="help">
+  <property name="grammar" value="src/Algo.g4" />
+  
+  <target name="help">
+    <echo msg="Ici l'aide"/>
+  </target>
+  
+  <target name="build">
+    <exec executable="antlr4">
+      <arg line="-Dlanguage=PHP ${grammar} -o src/Base -package Guedel\Algo\Base -visitor" />
+    </exec>
+  </target>
+  
+  <target name="clean">
+    <delete>
+      <fileset id='generated' dir="src/Base" >
+        <exclude name="*.g4" />
+        <include name="Algo*.*" />
+      </fileset>
+    </delete>
+  </target>
+  
+  <target name="run">
+    <echo msg="Execution..." />
+    <exec executable="php" >
+      <arg value="algo.php" />
+      <arg value="samples/sample1.algo" />
+    </exec>
+  </target>
+  
+  <target name="test" depends="build">
+    <echo msg="Test en cours..." />
+    <exec executable="php" >
+      <arg value="algo.php" />
+      <arg value="samples/sample1.algo" />
+    </exec>
+  </target>
+  
+  <target name="grun">
+    <echo msg="TODO" />
+    <exec executable="grun">
+      <arg line="algo r -tree" />
+    </exec>
+  </target>
+</project>

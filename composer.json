@@ -1,0 +1,30 @@
+{
+    "name": "guedel/algo-php",
+    "description": "Algorithm language parser",
+    "type": "project",
+    "autoload": {
+      "psr-4": { "Guedel\\Algo\\": "src/" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/guedel/Stream"
+      }
+    ],
+    "require": {
+        "antlr/antlr4-php-runtime": "dev-master",
+        "guedel/stream": "dev-master",
+        "ulrichsg/getopt-php": "^3.4"
+    },
+    "authors": [
+        {
+            "name": "Guedel",
+            "email": "guedel87@live.fr"
+        }
+    ],
+    "require-dev": {
+        "phing/phing": "^2.16"
+    }
+}

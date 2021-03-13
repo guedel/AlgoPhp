@@ -1,0 +1,14 @@
+algorithme testFonction
+début
+
+  fonction fact(n: entier): entier
+  début
+    if (n <= 1) alors
+      retourne 1;
+    sinon
+      retourne fact(n - 1) * n;
+  fin;
+
+  écrit fact(5)
+fin;
+

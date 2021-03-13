@@ -1,0 +1,11 @@
+algorithme sample1
+
+variable i : booléen
+
+i <- vrai
+
+si i = vrai alors
+	afficher "ok"
+fin si
+
+fin algorithme
